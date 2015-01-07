@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="styles.css" type="text/css" />
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+</head>
+
+<body>
+
+		<header>
+			<div class="width">
+				<h1><a href="#">Force Directed Graph</a></h1>
+			</div>
+		</header>
+		<nav>
+			<div class="width">
+					<ul>
+        					<li class="start selected"><a href=home.html">Home</a></li>
+        	    				<li class=""><a href="index.html">Live Demo</a></li>
+         	   				<li><a href="about.html">About</a></li>
+        				</ul>
+			</div>
+		</nav>
+</body>
+</html>		

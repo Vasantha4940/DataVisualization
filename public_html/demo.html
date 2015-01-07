@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+  <meta name="description" content="[An example of getting started with Cytoscape.js]" />
+  <link href="style.css" rel="stylesheet" />
+  <meta charset=utf-8 />
+  <title>Graph Data Visualization</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="http://cytoscape.github.io/cytoscape.js/api/cytoscape.js-latest/cytoscape.min.js"></script>
+  <script src="springy.js"></script>
+  <script src="layout.spread.worker.js"></script>
+  <!--<script src="uploadSpringy.js"></script>-->
+  <script src="uploadSpread.js"></script>
+ <!-- <script src="uploadGrid.js"></script>-->
+  <script src="benchmark.js"></script>
+  
+
+
+  <body>
+      <div id="header">
+          <input type="file" id="file" name="files[]" align="left">
+          &nbsp;
+              Select your Layout:
+              <select id="layouts">
+                  <option value="Spread">Spread</option>
+                  <option value="Springy">Springy</option>
+                  <option value="Grid">Grid</option>
+              </select>
+              <br><button onclick="getLayout();">Apply</button> </br>
+          
+      </div>
+      
+  <div id="cy"></div>
+  
+     <script>
+       
+ function getLayout()
+ {
+     var layoutList=document.getElementById("layouts").value;
+          if(layoutList=="Spread")
+          {
+              startRead_spread();
+          }else if(layoutList=="Springy")
+          {
+              startRead_springy();
+          }else if(layoutList=="Grid"){
+             startRead_grid() ;
+          }
+     
+     
+ }
+ 
+     </script>
+        
+  
+</body>
+</html>
