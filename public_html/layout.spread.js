@@ -9,7 +9,7 @@
    * - Finally it eliminates overlaps by using the method described by
    *   Gansner and North (doi:10.1007/3-540-37623-2_28)
    */
-  
+  console.log("sp called");
   var defaults = {
     ready: undefined,            // Callback on layoutready 
     stop: undefined,             // Callback on layoutstop
@@ -71,7 +71,7 @@
   }
 
   SpreadLayout.prototype.run = function(){
-
+console.log("run called");
     var layout = this;
     var self = this;
     
@@ -158,13 +158,15 @@
         var tgtNodeId = this.target().id();
         pData['edges'].push({src:srcNodeId,tgt:tgtNodeId});
       });
-
+ console.log("Spread layout+++++++++++++++++++++++++");
     // Then I need to create the parallel environment
-    var parallelSrcPath = $('script[src$="/parallel.js"]').attr('src');
+    var parallelSrcPath = $('script[src="parallel.js"]').attr('src');
+   /* 
+    console.log('parallelSrcPath');
     if( parallelSrcPath == null ) {
       throw "In order to use the 'spread' layout you need to load the parallel.js library before the cytoscape.js library.";
-    }
-    var evalScrPath =  parallelSrcPath.substring(0, parallelSrcPath.lastIndexOf('/'))+"/eval.js";
+    }*/
+    var evalScrPath =  "eval.js";
     var p = new Parallel( pData, { evalPath: evalScrPath } );
     
     // And to add the required scripts

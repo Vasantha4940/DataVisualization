@@ -9,43 +9,47 @@ function startRead_springy() {
 
     var file = document.getElementById("file").files[0];
     if (file) {
-        getAsText(file);
+        getAsText_springy(file);
         //alert("Name: " + file.name + "\n" + "Last Modified Date :" + file.lastModifiedDate);
     }
    
     //var endtime = new Date();
   
 }
- function getAsText(readFile) {
+ function getAsText_springy(readFile) {
     var reader = new FileReader();
     reader.readAsText(readFile);
-    reader.onload = loaded;
+    reader.onload = loaded_springy;
 }
-function loaded(evt) {
+function loaded_springy(evt) {
     //alert("File Loaded Successfully");
     var fileString = evt.target.result;
     var startTime = new Date();
-    drawgraph(fileString.toString());
+    drawgraph_springy(fileString.toString());
     var totalTime=new Date-startTime;
    // console.log(fileString.toString());
    console.log("total time taken is :"+totalTime);
 }
-function drawgraph(data){
-    
+function drawgraph_springy(data){
+    console.log("Springy Layout called");
     var nodes = [];
 var edges=[];
 var node=[];
-var len = 200;
+var len = 400;
 for (var i = 0; i < len; i++) {
-    nodes[i]={data: { id: ''+i , name: i } };
+    nodes[i]={data: { id: 'n'+i , name: 'n'+i } };
 var lines = data.split("\n");
  //console.log(lines);
    for(var k  in lines){
       var node=lines[k].replace('	', ',');
       var node_split=node.split(",");
-     
-    edges[k]=   { data: { source: ''+node_split[0], target: ''+node_split[1] } };
     
+    if (node != "")
+      {
+      var node_split=node.split(",");
+     
+    edges[k]=   { data: { source: 'n'+node_split[0], target: 'n'+node_split[1] } };
+      }
     }
 
 
@@ -65,8 +69,8 @@ var lines = data.split("\n");
   stop: undefined, // callback on layoutstop
 
   // springy forces
-  stiffness: 400,
-  repulsion: 100000,
+  stiffness: 40,
+  repulsion: 10,
   damping: 0.5
 };
   

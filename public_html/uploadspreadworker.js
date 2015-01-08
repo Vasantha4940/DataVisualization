@@ -3,55 +3,60 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-function startRead_grid() {
+function startRead_spreadSpreadW() {
   // var starttime = new Date();
 
-
+   console.log("Spread layout");
     var file = document.getElementById("file").files[0];
     if (file) {
-        getAsText(file);
+        getAsText_spreadworker(file);
         //alert("Name: " + file.name + "\n" + "Last Modified Date :" + file.lastModifiedDate);
     }
    
     //var endtime = new Date();
   
 }
- function getAsText(readFile) {
+ function getAsText_spreadworker(readFile) {
     var reader = new FileReader();
     reader.readAsText(readFile);
-    reader.onload = loaded;
+    reader.onload = loaded_spread;
 }
-function loaded(evt) {
+function loaded_spreadworker(evt) {
     //alert("File Loaded Successfully");
     var fileString = evt.target.result;
     var startTime = new Date();
-    drawgraph(fileString.toString());
+    drawgraph_spreadworker(fileString.toString());
     var totalTime=new Date-startTime;
    // console.log(fileString.toString());
    console.log("total time taken is :"+totalTime);
 }
-function drawgraph(data){
-    
+function drawgraph_spreadworker(data){
+    console.log("spread layout called");
     var nodes = [];
 var edges=[];
 var node=[];
-var len =400;
+var len =200;
 for (var i = 0; i < len; i++) {
-    nodes[i]={data: { id: ''+i , name: i } };
+    nodes[i]={data: { id: 'n'+i , name: 'n'+i } };
 var lines = data.split("\n");
  //console.log(lines);
    for(var k  in lines){
       var node=lines[k].replace('	', ',');
       var node_split=node.split(",");
+    if (node != "")
+      {
+      var node_split=node.split(",");
      
-    edges[k]=   { data: { source: ''+node_split[0], target: ''+node_split[1] } };
-    
+    edges[k]=   { data: { source: 'n'+node_split[0], target: 'n'+node_split[1] } };
+      }
     }
 
 
  }
+  var options = {
+  name: 'spreadworker'
+};
 
-  
 $('#cy').cytoscape(
         {
   style: cytoscape.stylesheet()
@@ -88,7 +93,7 @@ $('#cy').cytoscape(
     edges: edges
   },
   
-  layout:'grid',
+  layout:options,
   
   // on graph initial layout done (could be async depending on layout...)
   ready: function(){
@@ -114,6 +119,5 @@ $('#cy').cytoscape(
     });
   }
 });
-
    
 }
