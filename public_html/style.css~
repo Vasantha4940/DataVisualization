@@ -24,7 +24,8 @@ body {
 
        background-color: #B10058;
 	background-image: linear-gradient(#B10058, #99004D);
-       color:white;
+    
+    color:white;
     text-align:center;
     padding:5px;
 }

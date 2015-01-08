@@ -16,8 +16,8 @@
 		<nav>
 			<div class="width">
 					<ul>
-        					<li class="start selected"><a href=home.html">Home</a></li>
-        	    				<li class=""><a href="index.html">Live Demo</a></li>
+        					<li><a href=home.html">Home</a></li>
+        	    				<li><a href="demo.html">Live Demo</a></li>
          	   				<li><a href="about.html">About</a></li>
         				</ul>
 			</div>
