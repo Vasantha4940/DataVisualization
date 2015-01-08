@@ -16,11 +16,27 @@
 		<nav>
 			<div class="width">
 					<ul>
-        					<li><a href=home.html">Home</a></li>
+        					<li><a href="home.html">Home</a></li>
         	    				<li><a href="demo.html">Live Demo</a></li>
          	   				<li><a href="about.html">About</a></li>
         				</ul>
 			</div>
 		</nav>
+		<div class = "about" style="font-color:black;padding-left:180px;padding-top:20px;">
+			<h4>Goal </h4>
+			<p> <li>Visualization of a large network with more than 2000 nodes with increasing performance</li>
+                            <li>Usage of web worker API in order to increase the performance</li>
+                             <li>Comparing the performance of visualizing the graph with and without web workers</li></p>
+			<h4>Input</h4>
+			<p>The input is tsv file with nodes and edges specification</p>
+			
+			<h4>Output:</h4>
+			<p>The output will be in the form of a force directed graph with the nodes and edges connecting them using different layouts.</p>
+		
+		</div>
+
+<div align="center">
+<img src="data.png" alt="graph" style="width:500px;height:228px" ></img>
+</div>
 </body>
 </html>		

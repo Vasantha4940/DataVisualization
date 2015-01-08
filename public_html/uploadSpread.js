@@ -35,7 +35,7 @@ function drawgraph(data){
     var nodes = [];
 var edges=[];
 var node=[];
-var len =2000;
+var len =200;
 for (var i = 0; i < len; i++) {
     nodes[i]={data: { id: ''+i , name: i } };
 var lines = data.split("\n");
